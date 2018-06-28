@@ -5,18 +5,22 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 
-
 @Entity(
     indices = {
-        @Index(value = {"work", "rest", "round"}, unique = true),
-        @Index(value = {"display_name"}, unique = true)
+        @Index(value = {"last_name", "first_name"}, unique = true),
+        @Index(value = {"display_name"}, unique = true),
+        @Index(value = {"calendar"}, unique = true),
+        @Index(value = {"weight"}, unique = true)
+
+
+
     }
 )
 
-public class GymTimer {
+public class User {
 
     @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "timer_id")
+    @ColumnInfo(name = "user_id")
     private long id;
 
     public long getId() {

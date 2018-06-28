@@ -8,8 +8,11 @@ import java.util.TimerTask;
 
 @Entity(
     indices = {
+        @Index(value = {"stop"}, unique = true),
         @Index(value = {"start"}, unique = true),
-        @Index(value = {"stop"}, unique = true)
+        @Index(value = {"notes"}, unique = true),
+        @Index(value = {"completed"}, unique = true)
+
     }
 )
 
