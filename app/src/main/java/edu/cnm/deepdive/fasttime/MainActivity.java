@@ -7,9 +7,9 @@ import android.support.design.widget.BottomNavigationView.OnNavigationItemSelect
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
-import edu.cnm.deepdive.fasttime.controller.FastFragment;
-import edu.cnm.deepdive.fasttime.controller.GymFragment;
-import edu.cnm.deepdive.fasttime.controller.NotificationsFragment;
+import edu.cnm.deepdive.fasttime.fragment.FastFragment;
+import edu.cnm.deepdive.fasttime.fragment.GymFragment;
+import edu.cnm.deepdive.fasttime.fragment.NotificationsFragment;
 
 
 public class MainActivity extends AppCompatActivity

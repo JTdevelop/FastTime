@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.fasttime.controller;
+package edu.cnm.deepdive.fasttime.fragment;
 
 
 import android.os.Bundle;
