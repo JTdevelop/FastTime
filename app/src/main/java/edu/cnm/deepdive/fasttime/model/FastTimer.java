@@ -21,8 +21,11 @@ public class FastTimer {
   @PrimaryKey(autoGenerate = true)
   @ColumnInfo(name = "fast_time_id")
   private long id;
+  private long time_remain;
   private long start;
   private long stop;
+  private String note;
+  private boolean completed;
 
   public long getStart() {
     return start;
@@ -48,4 +51,28 @@ public class FastTimer {
     this.id = id;
   }
 
+  public long getTime_remain() {
+    return time_remain;
+  }
+
+  public void setTime_remain(long time_remain) {
+    this.time_remain = time_remain;
+  }
+
+  public String getNote() {
+    return note;
+  }
+
+  public void setNote(String note) {
+    this.note = note;
+  }
+
+  public boolean isCompleted() {
+    return completed;
+  }
+
+  public void setCompleted(boolean completed) {
+    this.completed = completed;
+  }
+  
 }
