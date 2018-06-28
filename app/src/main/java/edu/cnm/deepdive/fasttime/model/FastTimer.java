@@ -21,7 +21,6 @@ public class FastTimer {
   @PrimaryKey(autoGenerate = true)
   @ColumnInfo(name = "fast_time_id")
   private long id;
-
   private long start;
   private long stop;
 

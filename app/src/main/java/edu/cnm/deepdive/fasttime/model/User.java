@@ -7,10 +7,9 @@ import android.arch.persistence.room.PrimaryKey;
 
 @Entity(
     indices = {
-        @Index(value = {"last_name", "first_name"}, unique = true),
-        @Index(value = {"display_name"}, unique = true),
-        @Index(value = {"calendar"}, unique = true),
-        @Index(value = {"weight"}, unique = true)
+
+        @Index(value = {"id"}, unique = true),
+        @Index(value = {"email"}, unique = true)
 
 
 
@@ -19,15 +18,24 @@ import android.arch.persistence.room.PrimaryKey;
 
 public class User {
 
-    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "user_id")
-    private long id;
-
-    public long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(String id) {
         this.id = id;
     }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    private String id;
+    private String email;
+
+
 }
