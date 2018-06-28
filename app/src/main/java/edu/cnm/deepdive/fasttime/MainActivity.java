@@ -4,12 +4,12 @@ import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.BottomNavigationView.OnNavigationItemSelectedListener;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
 import edu.cnm.deepdive.fasttime.controller.FastFragment;
 import edu.cnm.deepdive.fasttime.controller.GymFragment;
 import edu.cnm.deepdive.fasttime.controller.NotificationsFragment;
-import android.support.v4.app.Fragment;
 
 
 public class MainActivity extends AppCompatActivity
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity
     loadFragment(new FastFragment());
   }
 
-  private boolean loadFragment (android.support.v4.app.Fragment fragment) {
+  private boolean loadFragment (Fragment fragment) {
     if(fragment != null) {
 
       getSupportFragmentManager()
