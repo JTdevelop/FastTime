@@ -6,7 +6,7 @@
   android:id="@+id/container"
   android:layout_width="match_parent"
   android:layout_height="match_parent"
-  tools:context="edu.cnm.deepdive.fasttime.MainActivity">
+  tools:context="edu.cnm.deepdive.fasttime.view.MainActivity">
 
   <FrameLayout
     android:id="@+id/fragment_container"
