@@ -11,6 +11,7 @@ import edu.cnm.deepdive.fasttime.R;
 import edu.cnm.deepdive.fasttime.fragment.FastFragment;
 import edu.cnm.deepdive.fasttime.fragment.GymFragment;
 import edu.cnm.deepdive.fasttime.fragment.NotificationsFragment;
+import edu.cnm.deepdive.fasttime.model.FastDatabase;
 
 
 public class MainActivity extends AppCompatActivity

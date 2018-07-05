@@ -7,22 +7,21 @@ import android.arch.persistence.room.PrimaryKey;
 
 @Entity(
     indices = {
-
-        @Index(value = {"id"}, unique = true),
         @Index(value = {"email"}, unique = true)
-
-
-
     }
 )
-
 public class User {
 
-    public String getId() {
+    @PrimaryKey(autoGenerate = true)
+    private long id;
+
+    private String email;
+
+    public long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -34,8 +33,7 @@ public class User {
         this.email = email;
     }
 
-    private String id;
-    private String email;
+
 
 
 }

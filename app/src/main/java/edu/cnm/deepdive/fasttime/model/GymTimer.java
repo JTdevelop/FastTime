@@ -5,61 +5,68 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
-import java.sql.Date;
 
 
 @Entity(
     indices = {
-        @Index(value = {"work"}, unique = true),
-        @Index(value = {"rest"}, unique = true),
-        @Index(value = {"round"}, unique = true),
-        @Index(value = {"timer_name"}, unique = true)
+        @Index(value = {"name"}, unique = true)
     }
 )
-
 public class GymTimer {
 
-    @PrimaryKey(autoGenerate = true)
-    @ColumnInfo(name = "timer_name")
-    private int work;
-    private int rest;
-    private int round;
+  // Maybe add a description column?
 
-    @NonNull
-    @ColumnInfo(name = "timer_name")
-    private String TimerName;
+  @PrimaryKey(autoGenerate = true)
+  private long id;
 
+  private int work;
 
-    public int getWork() {
-        return work;
-    }
+  private int rest;
 
-    public void setWork(int work) {
-        this.work = work;
-    }
+  private int round;
 
-    public int getRest() {
-        return rest;
-    }
+  @NonNull
+  @ColumnInfo(collate = ColumnInfo.NOCASE)
+  private String name;
 
-    public void setRest(int rest) {
-        this.rest = rest;
-    }
+  public long getId() {
+    return id;
+  }
 
-    public int getRound() {
-        return round;
-    }
+  public void setId(long id) {
+    this.id = id;
+  }
 
-    public void setRound(int round) {
-        this.round = round;
-    }
+  public int getWork() {
+    return work;
+  }
 
-    @NonNull
-    public String getTimerName() {
-        return TimerName;
-    }
+  public void setWork(int work) {
+    this.work = work;
+  }
 
-    public void setTimerName(@NonNull String timerName) {
-        TimerName = timerName;
-    }
+  public int getRest() {
+    return rest;
+  }
+
+  public void setRest(int rest) {
+    this.rest = rest;
+  }
+
+  public int getRound() {
+    return round;
+  }
+
+  public void setRound(int round) {
+    this.round = round;
+  }
+
+  @NonNull
+  public String getName() {
+    return name;
+  }
+
+  public void setName(@NonNull String name) {
+    this.name = name;
+  }
 }

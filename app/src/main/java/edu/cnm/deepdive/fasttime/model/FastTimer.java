@@ -9,25 +9,31 @@ import android.support.annotation.NonNull;
 
 @Entity(
     indices = {
-        @Index(value = {"id"}, unique = true),
-        @Index(value = {"stop"}, unique = true),
-        @Index(value = {"start"}, unique = true),
-        @Index(value = {"notes"}, unique = true),
-        @Index(value = {"completed"}, unique = true)
-
+        @Index(value = {"user_id", "start", "stop"}),
+        @Index(value = {"user_id", "start"}, unique = true),
+        @Index(value = {"user_id", "completed"})
     }
 )
-
 public class FastTimer {
 
   @PrimaryKey(autoGenerate = true)
-  @ColumnInfo(name = "fast_time_id")
   private long id;
-  private long time_remain;
+
+  @ColumnInfo(name = "user_id", index = true)
+  private long userId;
+
   private long start;
   private long stop;
   private String note;
   private boolean completed;
+
+  public long getUserId() {
+    return userId;
+  }
+
+  public void setUserId(long userId) {
+    this.userId = userId;
+  }
 
   @NonNull
   public long getStart() {
