@@ -6,4 +6,5 @@
   <string name="gym_info">Gym</string>
   <string name="fast_info">Fast</string>
   <string name="notifications_info">Sign In</string>
+  <string name="run">Run</string>
 </resources>

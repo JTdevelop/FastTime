@@ -9,6 +9,16 @@
     android:layout_centerHorizontal="true"
     android:layout_centerVertical="true"
     android:text="@string/gym_info"
-    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
+    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+    android:id="@+id/textView"/>
+  <Button
+    android:id="@+id/runbutton"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="88dp"
+    android:layout_marginEnd="117dp"
+    android:layout_alignParentBottom="true"
+    android:layout_alignParentEnd="true"
+    android:text="@string/run"/>
 
 </RelativeLayout>
