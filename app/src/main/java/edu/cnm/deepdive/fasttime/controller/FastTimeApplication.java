@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.fasttime;
+package edu.cnm.deepdive.fasttime.controller;
 
 import android.app.Application;
 import android.content.Context;

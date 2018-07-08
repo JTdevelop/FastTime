@@ -2,6 +2,7 @@ package edu.cnm.deepdive.fasttime.model;
 
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
+import android.provider.ContactsContract.CommonDataKinds.Note;
 import java.util.List;
 
 public interface FastTimerDao {
@@ -14,6 +15,10 @@ public interface FastTimerDao {
 
   @Insert
   List<Long> insert(FastTimer... timers);
+
+  @Insert
+  long insert(Note note);
+
 
   @Query("SELECT * FROM FastTimer ORDER BY name ASC")
   List<FastTimer> select();
