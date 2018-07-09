@@ -7,4 +7,9 @@
   <string name="fast_info">Fast</string>
   <string name="notifications_info">Sign In</string>
   <string name="run">Run</string>
+  <string name="timer_stop">Stop</string>
+  <string name="timer_start">Start</string>
+  <string name="time_remaining">Time Remaining: %1$d:%2$d</string>
+  <string name="progress">Progress: %1$d/%2$d</string>
+  <string name="progress_step">%1$d %2$s %3$d:%4$d</string>
 </resources>

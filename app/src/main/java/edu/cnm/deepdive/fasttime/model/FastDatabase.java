@@ -64,6 +64,12 @@ public abstract class FastDatabase extends RoomDatabase {
       timer.setWork(20);
       timer.setRest(10);
       database.getGymTimerDao().insert(timer);
+      timer = new GymTimer();
+      timer.setName("HIIT");
+      timer.setRound(10);
+      timer.setWork(30);
+      timer.setRest(15);
+      database.getGymTimerDao().insert(timer);
       return null;
     }
 
