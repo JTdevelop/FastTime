@@ -18,5 +18,6 @@ public class FastFragment extends Fragment {
     return inflater.inflate(R.layout.fragment_fast, null);
   }
 
+
 }
 
