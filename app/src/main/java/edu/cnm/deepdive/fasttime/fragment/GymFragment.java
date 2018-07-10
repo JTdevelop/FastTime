@@ -14,13 +14,19 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 import edu.cnm.deepdive.fasttime.R;
 import edu.cnm.deepdive.fasttime.model.FastDatabase;
 import edu.cnm.deepdive.fasttime.model.GymTimer;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Timer;
 
 public class GymFragment extends Fragment {
 
@@ -29,6 +35,14 @@ public class GymFragment extends Fragment {
   private TextView timeRemaining;
   private TextView progress;
   private ListView stepList;
+  private ToggleButton run;
+  private boolean running;
+  private long previousElapsedTime;
+  private long lastStartTime;
+  private long totalDuration;
+  private ArrayAdapter<String> stepsAdapter;
+  private List<String> progressSteps;
+  private Timer monitor;
 
 
   @Nullable
@@ -40,6 +54,7 @@ public class GymFragment extends Fragment {
     timeRemaining = view.findViewById(R.id.time_remaining);
     progress = view.findViewById(R.id.progress);
     stepList = view.findViewById(R.id.step_list);
+    run = view.findViewById(R.id.fast);
     timerSelect.setOnItemSelectedListener(new OnItemSelectedListener() {
       @Override
       public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -49,8 +64,9 @@ public class GymFragment extends Fragment {
             timer.getRound() * timer.getWork() + (timer.getRound() - 1) * timer.getRest();
         int minutes = totalSeconds / 60;
         int seconds = totalSeconds % 60;
+        totalDuration = totalSeconds * 1000L;
         timeRemaining.setText(getString(R.string.time_remaining, minutes, seconds));
-        String[] progressSteps = new String[2 * timer.getRound() - 1];
+        progressSteps = new ArrayList<>();
 
         int workMinutes = timer.getWork() / 60;
         int workSeconds = timer.getWork() % 60;
@@ -58,16 +74,18 @@ public class GymFragment extends Fragment {
         int restSeconds = timer.getRest() % 60;
 
         for (int i = 0; i < timer.getRound(); i++) {
-          progressSteps[2 * i] = getString(R.string.progress_step, i + 1, "Work", workMinutes,
-              workSeconds);
-          if (i < timer.getRound() -1) {
-            progressSteps[2 * i + 1] = getString(R.string.progress_step, i + 1, "Rest", restMinutes,
-                restSeconds);
+          progressSteps.add(getString(R.string.progress_step, i + 1, "Work", workMinutes,
+              workSeconds));
+          if (i < timer.getRound() - 1) {
+            progressSteps.add(getString(R.string.progress_step, i + 1, "Rest", restMinutes,
+                restSeconds));
           }
+
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, progressSteps);
-        stepList.setAdapter(adapter);
+        stepsAdapter = new ArrayAdapter<>(getActivity(),
+            R.layout.gym_timer_item, progressSteps);
+        stepList.setAdapter(stepsAdapter);
       }
 
       @Override
@@ -75,9 +93,90 @@ public class GymFragment extends Fragment {
 
       }
     });
+    run.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+      @Override
+      public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        if (isChecked) {
+          startMonitor();
+        } else {
+          stopMonitor();
+        }
+      }
+    });
     new GetTimers(timerSelect).execute(getActivity());
 
     return view;
+  }
+
+  private void stopMonitor() {
+    previousElapsedTime += System.currentTimeMillis();
+    previousElapsedTime -= lastStartTime;
+    running = false;
+    timerSelect.setEnabled(true);
+    run.setChecked(false);
+    update();
+  }
+
+  private void startMonitor() {
+    timerSelect.setEnabled(false);
+    lastStartTime = System.currentTimeMillis();
+    running = true;
+    monitor = new Timer();
+    monitor.start();
+  }
+
+  private void update() {
+    long totalElapsedTime = previousElapsedTime;
+    if (running) {
+      totalElapsedTime += System.currentTimeMillis();
+      totalElapsedTime -= lastStartTime;
+    }
+    long totalRemaining = totalDuration - totalElapsedTime;
+    if (totalRemaining <= 0 && running) {
+      stopMonitor();
+    }
+    int secondsRemaning = (int) (totalRemaining / 1000);
+    int minutesRemaning = secondsRemaning / 60;
+    secondsRemaning %= 60;
+    timeRemaining.setText(getString(R.string.time_remaining, minutesRemaning, secondsRemaning));
+    int updateRound = timer.getRound() - 1;
+    int offset = 0;
+    while (totalRemaining > 0) {
+      if (totalRemaining <= timer.getWork() * 1000) {
+        secondsRemaning = (int) (totalRemaining / 1000);
+        minutesRemaning = secondsRemaning / 60;
+        secondsRemaning %= 60;
+        int position = stepsAdapter.getCount() - 1 - offset;
+        stepsAdapter.remove(stepsAdapter.getItem(position));
+        stepsAdapter
+            .insert(getString(R.string.progress_step, updateRound + 1, "Work", minutesRemaning,
+                secondsRemaning), position);
+        break;
+      }
+
+      offset++;
+      updateRound--;
+      totalRemaining -= timer.getWork() * 1000;
+
+      if (totalRemaining <= timer.getRest() * 1000) {
+        secondsRemaning = (int) (totalRemaining / 1000);
+        minutesRemaning = secondsRemaning / 60;
+        secondsRemaning %= 60;
+        int position = stepsAdapter.getCount() - 1 - offset;
+        stepsAdapter.remove(stepsAdapter.getItem(position));
+        stepsAdapter
+            .insert(getString(R.string.progress_step, updateRound + 1, "Rest", minutesRemaning,
+                secondsRemaning), position);
+        break;
+      }
+
+      offset++;
+      totalRemaining -= timer.getRest() * 1000;
+    }
+    for (int i = 0; i < stepsAdapter.getCount() - 1 - offset; i++) {
+      stepsAdapter.remove(stepsAdapter.getItem(0));
+    }
+    progress.setText(getString(R.string.progress, updateRound + 1, timer.getRound()));
   }
 
   private static class GetTimers extends AsyncTask<Context, Void, List<GymTimer>> {
@@ -109,6 +208,26 @@ public class GymFragment extends Fragment {
       super.onCancelled(gymTimers);
       spinner = null;
       context = null;
+    }
+  }
+
+  private class Timer extends Thread {
+
+    @Override
+    public void run() {
+      while (running) {
+        try {
+          Thread.sleep(1000);
+        } catch (InterruptedException e) {
+          // DO NOTHING!
+        }
+        getActivity().runOnUiThread(new Runnable() {
+          @Override
+          public void run() {
+            update();
+          }
+        });
+      }
     }
   }
 

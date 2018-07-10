@@ -24,36 +24,33 @@
     app:layout_constraintTop_toBottomOf="@id/timer_select"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
-    android:text="@string/time_remaining"
-    />
+    android:text="@string/time_remaining"/>
 
   <ListView
     android:id="@+id/step_list"
     android:layout_width="match_parent"
     android:layout_height="326dp"
     app:layout_constraintBottom_toTopOf="@+id/progress"
-    app:layout_constraintTop_toBottomOf="@id/time_remaining"
-    />
+    app:layout_constraintTop_toBottomOf="@id/time_remaining"/>
 
   <TextView
     android:id="@+id/progress"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="@string/progress"
-    app:layout_constraintBottom_toTopOf="@+id/Fast"
+    app:layout_constraintBottom_toTopOf="@+id/fast"
     app:layout_constraintStart_toStartOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     tools:ignore="HardcodedText"/>
 
   <ToggleButton
-    android:id="@+id/Fast"
+    android:id="@+id/fast"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textOn="@string/timer_stop"
     android:textOff="@string/timer_start"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    />
+    app:layout_constraintEnd_toEndOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>

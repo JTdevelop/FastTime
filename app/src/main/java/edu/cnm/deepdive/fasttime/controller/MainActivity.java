@@ -31,8 +31,8 @@ public class MainActivity extends AppCompatActivity
     loadFragment(new FastFragment());
   }
 
-  private boolean loadFragment (Fragment fragment) {
-    if(fragment != null) {
+  private boolean loadFragment(Fragment fragment) {
+    if (fragment != null) {
 
       getSupportFragmentManager()
           .beginTransaction()
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity
 
     Fragment fragment = null;
 
-    switch(menuItem.getItemId()) {
+    switch (menuItem.getItemId()) {
 
       case R.id.navigation_gym:
         loadFragment(new GymFragment());
@@ -59,9 +59,9 @@ public class MainActivity extends AppCompatActivity
         loadFragment(new FastFragment());
         break;
 
-        case R.id.navigation_notifications:
-          loadFragment(new NotificationsFragment());
-          break;
+      case R.id.navigation_notifications:
+        loadFragment(new NotificationsFragment());
+        break;
     }
 
     return false;

@@ -19,7 +19,8 @@ public abstract class FastDatabase extends RoomDatabase {
 
   public static FastDatabase getInstance(Context context) {
     if (instance == null) {
-      instance = Room.databaseBuilder(context.getApplicationContext(), FastDatabase.class, DATABASE_NAME)
+      instance = Room
+          .databaseBuilder(context.getApplicationContext(), FastDatabase.class, DATABASE_NAME)
           .addCallback(new Callback(context)) // FIXME
           .build();
     }
