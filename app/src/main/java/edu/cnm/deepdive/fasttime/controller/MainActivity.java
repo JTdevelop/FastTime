@@ -1,4 +1,4 @@
-package edu.cnm.deepdive.fasttime.view;
+package edu.cnm.deepdive.fasttime.controller;
 
 import android.os.Bundle;
 import android.os.CountDownTimer;
