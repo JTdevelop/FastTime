@@ -6,33 +6,24 @@
   android:layout_width="match_parent"
   android:layout_height="match_parent"
   xmlns:app="http://schemas.android.com/apk/res-auto"
-  android:layout_margin="16dp"
+  android:layout_margin="8dp"
   android:orientation="vertical">
 
   <ListView
-    android:id="@+id/step_list"
+    android:id="@+id/fast_list"
     android:layout_width="match_parent"
     android:layout_height="326dp"
-    app:layout_constraintBottom_toTopOf="@+id/progress"
-    app:layout_constraintTop_toBottomOf="@id/time_remaining"/>
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toTopOf=""/>
 
-  <TextView
-    android:id="@+id/progress"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="@string/progress"
-    app:layout_constraintBottom_toTopOf="@+id/fast"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    tools:ignore="HardcodedText"/>
 
   <TextView
     android:id="@+id/time_remaining"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    app:layout_constraintTop_toBottomOf="@id/timer_select"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toStartOf=""
     android:text="@string/time_remaining"/>
 
 
@@ -43,7 +34,7 @@
     android:textOn="@string/timer_stop"
     android:textOff="@string/timer_start"
     app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintStart_toEndOf="@id/time_remaining"
     app:layout_constraintEnd_toEndOf="parent"/>
 
 </android.support.constraint.ConstraintLayout>
