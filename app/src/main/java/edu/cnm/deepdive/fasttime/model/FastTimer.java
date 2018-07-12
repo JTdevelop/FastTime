@@ -5,6 +5,7 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
+import java.util.Date;
 
 
 @Entity(
@@ -82,4 +83,15 @@ public class FastTimer {
     this.completed = completed;
   }
 
+  @Override
+  public String toString() {
+    Date startDate = new Date(start);
+    Date stopDate = new Date(stop);
+    long duration = stop - start;
+    long hours = duration / 1000 / 3600;
+    long minutes = duration / 1000 / 60 % 60;
+
+
+    return String.format("%1$02d:%2$02d", hours, minutes);
+  }
 }
