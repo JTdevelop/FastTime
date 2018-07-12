@@ -1,23 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<android.support.constraint.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
   android:layout_width="match_parent"
-  android:layout_height="match_parent">
+  android:layout_height="match_parent"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_margin="16dp"
+  android:orientation="vertical">
+
+  <ListView
+    android:id="@+id/step_list"
+    android:layout_width="match_parent"
+    android:layout_height="326dp"
+    app:layout_constraintBottom_toTopOf="@+id/progress"
+    app:layout_constraintTop_toBottomOf="@id/time_remaining"/>
 
   <TextView
+    android:id="@+id/progress"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_centerHorizontal="true"
-    android:layout_centerVertical="true"
-    android:text="@string/fast_info"
-    android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"/>
+    android:text="@string/progress"
+    app:layout_constraintBottom_toTopOf="@+id/fast"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    tools:ignore="HardcodedText"/>
 
   <TextView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/time_remaining"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:textSize="16sp"
-    android:padding="16dp">
+    app:layout_constraintTop_toBottomOf="@id/timer_select"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:text="@string/time_remaining"/>
 
-  </TextView>
-  
-</RelativeLayout>
+
+  <ToggleButton
+    android:id="@+id/fast"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textOn="@string/timer_stop"
+    android:textOff="@string/timer_start"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+
+</android.support.constraint.ConstraintLayout>

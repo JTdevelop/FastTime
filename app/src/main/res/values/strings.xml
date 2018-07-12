@@ -1,5 +1,5 @@
 <resources>
-  <string name="app_name">Fast Time</string>
+  <string name="app_name">Fast Tracker App</string>
   <string name="title_gym">Gym Timer</string>
   <string name="title_fast">Fasting Timer</string>
   <string name="title_notifications">Sign In</string>
