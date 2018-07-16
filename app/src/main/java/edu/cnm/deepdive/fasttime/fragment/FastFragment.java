@@ -119,25 +119,25 @@ public class FastFragment extends Fragment {
     }
   }
 
-  private class Timer extends Thread {
+ // private class Timer extends Thread {
 
-    @Override
-    public void run() {
-      while (running) {
-        try {
-          Thread.sleep(1000);
-        } catch (InterruptedException e) {
-          // DO NOTHING!
-        }
-        getActivity().runOnUiThread(new Runnable() {
-          @Override
-          public void run() {
-            update();
-          }
-        });
-      }
-    }
-  }
+//    @Override
+//    public void run() {
+//      while (running) {
+//        try {
+//          Thread.sleep(1000);
+//        } catch (InterruptedException e) {
+//          // DO NOTHING!
+//        }
+//        getActivity().runOnUiThread(new Runnable() {
+//          @Override
+//          public void run() {
+//            update();
+//          }
+//        });
+//      }
+//    }
+//  }
 
 }
 
