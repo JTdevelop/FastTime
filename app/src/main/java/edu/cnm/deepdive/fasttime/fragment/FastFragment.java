@@ -31,6 +31,7 @@ public class FastFragment extends Fragment {
   private ToggleButton fast;
   private Calendar calendar;
   private boolean checkedByCode;
+  private boolean running;
 
   @Nullable
   @Override
@@ -119,25 +120,26 @@ public class FastFragment extends Fragment {
     }
   }
 
- // private class Timer extends Thread {
+  private class Timer extends Thread {
 
-//    @Override
-//    public void run() {
-//      while (running) {
-//        try {
-//          Thread.sleep(1000);
-//        } catch (InterruptedException e) {
-//          // DO NOTHING!
-//        }
-//        getActivity().runOnUiThread(new Runnable() {
-//          @Override
-//          public void run() {
+    @Override
+    public void run() {
+      while (running) {
+        try {
+          Thread.sleep(1000);
+        } catch (InterruptedException e) {
+          // DO NOTHING!
+        }
+        getActivity().runOnUiThread(new Runnable() {
+          @Override
+          public void run() {
 //            update();
-//          }
-//        });
-//      }
-//    }
-//  }
+            // TODO write update method.
+          }
+        });
+      }
+    }
+  }
 
 }
 

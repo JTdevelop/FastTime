@@ -25,7 +25,7 @@ public class FastTimeApplication extends Application {
     GoogleSignInOptions options = new GoogleSignInOptions.Builder()
         .requestEmail()
         .requestId()
-        .requestIdToken("904153293464-0qc36597j6ie0htqdol3bu96404pftvn.apps.googleusercontent.com")
+//        .requestIdToken("904153293464-0qc36597j6ie0htqdol3bu96404pftvn.apps.googleusercontent.com")
         .build();
     signInClient = GoogleSignIn.getClient(this, options);
   }

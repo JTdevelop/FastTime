@@ -64,10 +64,10 @@ public class LoginActivity extends AppCompatActivity {
     startActivity(intent);
   }
 
-  private SignInApplication getSignInApplication() {
-    return (SignInApplication) getApplication();
+  private FastTimeApplication getSignInApplication() {
+    return (FastTimeApplication) getApplication();
   }
 
 }
 
-}
+
