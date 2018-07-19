@@ -13,7 +13,7 @@
  
 ### Current State of FastTime
 Currently, FastTime has only one main element of two main elements functional. 
-#### Hit List of deciciencies
+#### Hit List of deficiencies
 
 ### List of Android API versions and hardware tested
 *Android API 21 platform
@@ -31,10 +31,13 @@ Currently, FastTime has only one main element of two main elements functional.
 ### FastTime Links
 #### FastTime Wireframes
 #### FastTime User Stories
+[FastTime User Stories](docs/FastTimeERD)
 #### FastTime ERD
+[Entity Relationship Diagram](docs/FastTimeERD)
 #### FastTime DDL
 #### FastTime Javadoc HTML
 #### FastTime License Information
+[FastTime License](/LICENSE)
 #### FastTime Build Instructions
 #### FastTime User Instructions
 
