@@ -13,7 +13,13 @@
  
 ### Current State of FastTime
 Currently, FastTime has only one main element of two main elements functional. 
+The two elements of FastTime are a Gym Timer and a Fasting Timer. 
+The Fasting Timer currently does not work as intended.
 #### Hit List of deficiencies
+Fast Timer does not Run
+Fast Timer does not Record Data
+Fast Timer does not insert Data into Database
+Gym Timer does not make sounds
 
 ### List of Android API versions and hardware tested
 *Android API 21 platform
@@ -25,8 +31,15 @@ Currently, FastTime has only one main element of two main elements functional.
 *Google Oauth 2.0
 
 ### List of aesthetic/cosmetic improvements that would improve FastTime
+A GUI and Color Style Overhaul
+Better Implementation of Material Design
+More User Friendly Displays.
+Animation Transitions between the fragments. 
 
 ### List of functional stretch goals for FastTime
+being able to make friends and see your friends completed Fasts.
+Bar Chart for Completed Fast Durations. 
+Calendar Display of Completed Fasts. 
 
 ### FastTime Links
 #### FastTime Wireframes
