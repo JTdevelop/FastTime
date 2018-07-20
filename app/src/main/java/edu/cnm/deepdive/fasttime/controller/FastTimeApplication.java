@@ -33,8 +33,7 @@ public class FastTimeApplication extends Application {
   }
 
   /**
-   *  This method accesses the GoogleSignInClient
-   * @return 
+   * This method accesses the GoogleSignInClient
    */
   public GoogleSignInClient getSignInClient() {
     return signInClient;
@@ -44,10 +43,16 @@ public class FastTimeApplication extends Application {
     this.signInClient = signInClient;
   }
 
+  /**
+   * This method accesses the GoogleSignInAccount
+   */
   public GoogleSignInAccount getSignInAccount() {
     return signInAccount;
   }
 
+  /**
+   * This method sets the account sign in.
+   */
   public void setSignInAccount(GoogleSignInAccount signInAccount) {
     this.signInAccount = signInAccount;
   }

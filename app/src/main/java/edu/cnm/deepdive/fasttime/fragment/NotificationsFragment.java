@@ -15,6 +15,9 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.common.SignInButton;
 import edu.cnm.deepdive.fasttime.R;
 
+/**
+ * A fragment subclass for the about this section.
+ */
 public class NotificationsFragment extends Fragment {
 
   @Nullable
@@ -23,4 +26,5 @@ public class NotificationsFragment extends Fragment {
       @Nullable Bundle savedInstanceState) {
     return inflater.inflate(R.layout.fragment_notifications, null);
   }
+
 }

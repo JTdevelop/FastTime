@@ -15,6 +15,9 @@ import java.util.Date;
         @Index(value = {"user_id", "completed"})
     }
 )
+/**
+ *  A class to handle the duration of daily Fasts
+ */
 public class FastTimer {
 
   @PrimaryKey(autoGenerate = true)
@@ -90,7 +93,6 @@ public class FastTimer {
     long duration = stop - start;
     long hours = duration / 1000 / 3600;
     long minutes = duration / 1000 / 60 % 60;
-
 
     return String.format("%1$02d:%2$02d", hours, minutes);
   }

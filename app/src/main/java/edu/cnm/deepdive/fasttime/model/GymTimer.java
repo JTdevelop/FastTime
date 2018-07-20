@@ -12,6 +12,10 @@ import android.support.annotation.NonNull;
         @Index(value = {"name"}, unique = true)
     }
 )
+
+/**
+ * A class to handle
+ */
 public class GymTimer {
 
   // Maybe add a description column?

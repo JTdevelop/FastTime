@@ -11,6 +11,9 @@ import android.widget.DatePicker;
 import android.widget.TimePicker;
 import java.util.Calendar;
 
+/**
+ *  A fragment subclass that sets the date and time.
+ */
 public class DateTimePickerFragment extends DialogFragment
     implements DatePickerDialog.OnDateSetListener, TimePickerDialog.OnTimeSetListener {
 

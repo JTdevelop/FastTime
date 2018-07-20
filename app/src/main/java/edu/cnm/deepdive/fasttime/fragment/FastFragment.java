@@ -24,6 +24,9 @@ import edu.cnm.deepdive.fasttime.model.GymTimer;
 import java.util.Calendar;
 import java.util.List;
 
+/**
+ *  A subclass fragment for Fast Timer Lifecycle
+ */
 public class FastFragment extends Fragment {
 
   private ListView fastList;

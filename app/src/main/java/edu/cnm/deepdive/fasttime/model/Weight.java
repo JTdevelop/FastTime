@@ -1,12 +1,10 @@
 package edu.cnm.deepdive.fasttime.model;
 
-
 import android.arch.persistence.room.ColumnInfo;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.ForeignKey;
 import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
-import java.sql.Timestamp;
 
 @Entity(
     indices = {
@@ -16,6 +14,10 @@ import java.sql.Timestamp;
         @ForeignKey(entity = User.class, parentColumns = "id", childColumns = "user_id")
     }
 )
+
+/**
+ *  A class for for users to enter their weight.
+ */
 public class Weight {
 
   @PrimaryKey(autoGenerate = true)
@@ -60,4 +62,5 @@ public class Weight {
   public void setWeight(float weight) {
     this.weight = weight;
   }
+
 }
