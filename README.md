@@ -1,6 +1,6 @@
 
 # FastTime App
-## Deep Dive Coding Java Android **Salesforce** Cohort 4
+## Deep Dive Coding Java Android __Salesforce__ Cohort 4
 
 ### Aims and Motivations
 #### Why choose FastTime?
@@ -52,10 +52,13 @@ The Fasting Timer currently does not work as intended.
 #### FastTime DDL
 [FastTime DDL](docs/ddl)
 #### FastTime Javadoc HTML
+[FastTime Javadocs](docs/api)
 #### FastTime License Information
 [FastTime License](/LICENSE)
 #### FastTime Build Instructions
+[FastTime Installation Instructions](docs/installation)
 #### FastTime User Instructions
+[FastTime User Instructions](docs/instructions)
 
 
 
