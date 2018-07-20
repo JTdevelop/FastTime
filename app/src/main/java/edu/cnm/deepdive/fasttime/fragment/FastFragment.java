@@ -133,20 +133,7 @@ public class FastFragment extends Fragment {
         getActivity().runOnUiThread(new Runnable() {
           @Override
           public void run() {
-           private void update() {
-    long totalElapsedTime = previousElapsedTime;
-    if (running) {
-      totalElapsedTime += System.currentTimeMillis();
-      totalElapsedTime -= lastStartTime;
-    }
-    long totalRemaining = totalDuration - totalElapsedTime;
-    if (totalRemaining <= 0 && running) {
-      stopMonitor();
-    }
-    int secondsRemaning = (int) (totalRemaining / 1000);
-    int minutesRemaning = secondsRemaning / 60;
-    secondsRemaning %= 60;
-    timeRemaining.setText(getString(R.string.time_remaining, minutesRemaning, secondsRemaning));
+
           }
         });
       }

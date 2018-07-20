@@ -10,8 +10,10 @@ import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import edu.cnm.deepdive.fasttime.model.FastDatabase;
 import edu.cnm.deepdive.fasttime.model.GymTimer;
-import java.util.List;
 
+/**
+ *
+ */
 public class FastTimeApplication extends Application {
 
   private GoogleSignInClient signInClient;
@@ -30,6 +32,10 @@ public class FastTimeApplication extends Application {
     signInClient = GoogleSignIn.getClient(this, options);
   }
 
+  /**
+   *  This method accesses the GoogleSignInClient
+   * @return 
+   */
   public GoogleSignInClient getSignInClient() {
     return signInClient;
   }
