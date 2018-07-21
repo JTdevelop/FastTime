@@ -32,6 +32,7 @@ public abstract class FastDatabase extends RoomDatabase {
   }
 
   public abstract GymTimerDao getGymTimerDao();
+  public abstract FastTimerDao getFastTimerDao();
 
   private static class Callback extends RoomDatabase.Callback {
 

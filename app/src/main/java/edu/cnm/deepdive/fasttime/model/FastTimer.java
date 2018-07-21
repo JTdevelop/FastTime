@@ -5,6 +5,7 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
+import java.text.DateFormat;
 import java.util.Date;
 
 
@@ -90,10 +91,14 @@ public class FastTimer {
   public String toString() {
     Date startDate = new Date(start);
     Date stopDate = new Date(stop);
+    DateFormat format = DateFormat.getInstance();
+
     long duration = stop - start;
     long hours = duration / 1000 / 3600;
     long minutes = duration / 1000 / 60 % 60;
 
-    return String.format("%1$02d:%2$02d", hours, minutes);
+
+    return String.format("%3$s - %4$s (%1$02d:%2$02d)",
+        hours, minutes, format.format(startDate) , format.format(stopDate));
   }
 }
