@@ -3,10 +3,13 @@
 ## Deep Dive Coding Java Android __Salesforce__ Cohort 4
 
 ### Aims and Motivations
+
 #### Why choose FastTime?
 * To facilitate the completion of the requirements set forth in the course syllabus of the Java Android Salesforce Cohort 4 bootcamp to completion.
-* To build a simpler timer system that works
-* To build my knowledge skills and abilities in Java and Android
+* To build a simple timer system that works to keep track of the last time you ate something. 
+* To build a simple app that implements a interval workout timer.
+* To build my knowledge, skills, and abilities with Java and Android development.
+
 #### Why is FastTime a potentially or particularly useful or interesting app?
 * It's an application in which myself and other users can personally use to better track eating habits.
 * It's an application in which myself and other users can have an audibile timer for interval  or round workouts.
@@ -16,14 +19,14 @@ Currently, FastTime has only one main element of two main elements functional.
 The two elements of FastTime are a Gym Timer and a Fasting Timer. 
 The Fasting Timer currently does not work as intended.
 #### Hit List of deficiencies
-* Fast Timer does not Run
+* Fast Timer allows negative fast times to be entered.
 * Fast Timer does not Record Data
 * Fast Timer does not insert Data into Database
 * Gym Timer does not make sounds
 
 ### List of Android API versions and hardware tested
 * Android API 21 platform
-* Nexus 5
+* Nexus 5X API 27
 
 ### List of 3rd-party libraries used by FastTime
 * none
@@ -33,6 +36,7 @@ The Fasting Timer currently does not work as intended.
 
 ### List of aesthetic/cosmetic improvements that would improve FastTime
 * A GUI and Color Style Overhaul
+* A Graph representation of past fasts that can be filtered by timeline. e.g.(week, month, year)
 * Better Implementation of Material Design
 * More User Friendly Displays.
 * Animation Transitions between the fragments. 
