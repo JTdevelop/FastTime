@@ -3,8 +3,8 @@
 ## Deep Dive Coding Java Android __Salesforce__ Cohort 4
 
 ### Aims and Motivations
-     What I wanted to accomplish with Fast Time is to buid an application that would use simple classes
-     and methods written in Java to be run on Android. This would allow me to learn a lot of basic 
+     What I wanted to accomplish with Fast Time is to buid an application that would use some simple classes
+     and methods written in Java to run an app on Android. This would allow me to learn a lot of basic 
      skills for Java and Android development. 
 
 #### Why choose FastTime?
@@ -23,14 +23,17 @@ an interval timer with a fasting timer.
 for interval  or round workouts.
  
 ### Current State of FastTime
-     Currently, FastTime has only one main element of two main elements functional. 
-     The two elements of FastTime are a Gym Timer and a Fasting Timer. 
-     The Fasting Timer currently does not work as intended.
+     Currently, FastTime has basic as outlined in Wire Frames.
+     1.) The first is a Gym Timer element that runs an interval sytle workout timer
+     2.) The second is a Intermittent Fasting Timer that allows you to track when you are fasting, 
+     and for how long you have been fasting for.
+     
 #### Hit List of deficiencies
-* Fast Timer allows negative fast times to be entered.
-* Fast Timer does not Record Data
-* Fast Timer does not insert Data into Database
+* Fast Timer does not allow you when to select to end a fast. 
+Timer will only timestamp when you press stop fast button.
+* Fast Timer does not allow records to be updated or deleted once entered into database.
 * Gym Timer does not make sounds
+* Gym Timer does not allow custom selection of workouts.
 
 ### List of Android API versions and hardware tested
 * Android API 21 platform
@@ -43,7 +46,7 @@ for interval  or round workouts.
 * Google Oauth 2.0
 
 ### List of aesthetic/cosmetic improvements that would improve FastTime
-* A GUI and Color Style Overhaul
+* A GUI and Color Style Update to Material Design guidelines.
 * A Graph representation of past fasts that can be filtered by timeline. e.g.(week, month, year)
 * Better Implementation of Material Design
 * More User Friendly Displays.
@@ -55,22 +58,38 @@ for interval  or round workouts.
 * being able to make friends and see your friends completed Fasts.
  
 ### FastTime Links
+
 #### FastTime Wireframes
-[FastTime Wireframes](docs/FastTimeWireFrame)
+
+[FastTime Wireframes](docs/FastTimeWireFrame.pdf)
+
 #### FastTime User Stories
-[FastTime User Stories](docs/FastTimeUserStory)
+
+[FastTime User Stories](docs/userstory.pdf)
+
 #### FastTime ERD
-[Entity Relationship Diagram](docs/FastTimeERD)
+
+[Entity Relationship Diagram](docs/FastTimeERD.pdf)
+
 #### FastTime DDL
-[FastTime DDL](docs/ddl)
+
+[FastTime DDL](docs/ddl.sql)
+
 #### FastTime Javadoc HTML
+
 [FastTime Javadocs](docs/api)
+
 #### FastTime License Information
-[FastTime License](/LICENSE)
+
+[FastTime License](LICENSE)
+
 #### FastTime Build Instructions
-[FastTime Installation Instructions](docs/installation)
+
+[FastTime Installation Instructions](docs/installation.md)
+
 #### FastTime User Instructions
-[FastTime User Instructions](docs/instructions)
+
+[FastTime User Instructions](docs/instructions.md)
 
 
 

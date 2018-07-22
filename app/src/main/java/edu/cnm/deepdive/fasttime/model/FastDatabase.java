@@ -8,6 +8,9 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 
+/**
+ * A database Subclass for the application to store data.
+ */
 @Database(entities = {User.class, Weight.class, FastTimer.class, GymTimer.class},
     version = FastDatabase.DATABASE_VERSION, exportSchema = true)
 public abstract class FastDatabase extends RoomDatabase {
@@ -32,6 +35,7 @@ public abstract class FastDatabase extends RoomDatabase {
   }
 
   public abstract GymTimerDao getGymTimerDao();
+
   public abstract FastTimerDao getFastTimerDao();
 
   private static class Callback extends RoomDatabase.Callback {

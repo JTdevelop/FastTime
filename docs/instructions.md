@@ -15,5 +15,5 @@ and Select Start again to start the Gym Timer running again.
 ## FastTime Fast Timer Instructions
 
 The Fast timer is basic in its operation.
-The Fist Main Component is a running timer button to select when you're ready to starting eating for the day.
-When you are finished eating for the day; simply press the stop button and your eating habits will be published to the database.
+The Fist Main Component is a running timer button to select when you're ready to starting fasting for the day.
+When you are finished fasting for the day; simply press the stop button and your eating habits will be published to the database.

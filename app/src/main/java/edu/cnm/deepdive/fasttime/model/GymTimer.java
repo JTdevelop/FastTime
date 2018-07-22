@@ -6,7 +6,6 @@ import android.arch.persistence.room.Index;
 import android.arch.persistence.room.PrimaryKey;
 import android.support.annotation.NonNull;
 
-
 @Entity(
     indices = {
         @Index(value = {"name"}, unique = true)
@@ -14,7 +13,7 @@ import android.support.annotation.NonNull;
 )
 
 /**
- * A class to handle
+ * A class to handle the Gym Timers.
  */
 public class GymTimer {
 

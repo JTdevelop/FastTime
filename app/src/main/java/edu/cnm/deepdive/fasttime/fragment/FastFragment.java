@@ -13,7 +13,6 @@ import android.widget.ArrayAdapter;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.ListView;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.ToggleButton;
 import edu.cnm.deepdive.fasttime.R;
@@ -21,7 +20,6 @@ import edu.cnm.deepdive.fasttime.fragment.DateTimePickerFragment.Mode;
 import edu.cnm.deepdive.fasttime.fragment.DateTimePickerFragment.OnChangeListener;
 import edu.cnm.deepdive.fasttime.model.FastDatabase;
 import edu.cnm.deepdive.fasttime.model.FastTimer;
-import edu.cnm.deepdive.fasttime.model.GymTimer;
 import java.util.Calendar;
 import java.util.List;
 

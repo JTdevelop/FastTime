@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.Timer;
 
 /**
- *  A subclass fragment for Fast Timer Lifecycle
+ * A subclass fragment for Fast Timer Lifecycle
  */
 public class GymFragment extends Fragment {
 
@@ -46,7 +46,6 @@ public class GymFragment extends Fragment {
   private ArrayAdapter<String> stepsAdapter;
   private List<String> progressSteps;
   private Timer monitor;
-
 
   @Nullable
   @Override
@@ -83,7 +82,6 @@ public class GymFragment extends Fragment {
             progressSteps.add(getString(R.string.progress_step, i + 1, "Rest", restMinutes,
                 restSeconds));
           }
-
         }
 
         stepsAdapter = new ArrayAdapter<>(getActivity(),
@@ -93,7 +91,6 @@ public class GymFragment extends Fragment {
 
       @Override
       public void onNothingSelected(AdapterView<?> parent) {
-
       }
     });
     run.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -107,7 +104,6 @@ public class GymFragment extends Fragment {
       }
     });
     new GetTimers(timerSelect).execute(getActivity());
-
     return view;
   }
 

@@ -12,7 +12,8 @@ import edu.cnm.deepdive.fasttime.model.FastDatabase;
 import edu.cnm.deepdive.fasttime.model.GymTimer;
 
 /**
- *
+ * This subclass of Application has fields for google sign in.
+ * It includes on OnCreate method that will request google sign in.
  */
 public class FastTimeApplication extends Application {
 

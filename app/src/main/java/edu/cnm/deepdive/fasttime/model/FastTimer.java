@@ -8,7 +8,6 @@ import android.support.annotation.NonNull;
 import java.text.DateFormat;
 import java.util.Date;
 
-
 @Entity(
     indices = {
         @Index(value = {"user_id", "start", "stop"}),
@@ -25,8 +24,8 @@ public class FastTimer {
   private long id;
 
   @ColumnInfo(name = "user_id", index = true)
-  private long userId;
 
+  private long userId;
   private long start;
   private long stop;
   private String note;
@@ -97,8 +96,8 @@ public class FastTimer {
     long hours = duration / 1000 / 3600;
     long minutes = duration / 1000 / 60 % 60;
 
-
     return String.format("%3$s - %4$s (%1$02d:%2$02d)",
-        hours, minutes, format.format(startDate) , format.format(stopDate));
+        hours, minutes, format.format(startDate), format.format(stopDate));
   }
+
 }
