@@ -56,7 +56,6 @@ public abstract class FastDatabase extends RoomDatabase {
     public void onOpen(@NonNull SupportSQLiteDatabase db) {
       super.onOpen(db);
     }
-
   }
 
   private static class DataPrepopulate extends AsyncTask<Context, Void, Void> {
@@ -78,7 +77,6 @@ public abstract class FastDatabase extends RoomDatabase {
       database.getGymTimerDao().insert(timer);
       return null;
     }
-
   }
 
 }

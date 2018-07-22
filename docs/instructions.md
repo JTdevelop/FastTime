@@ -1,19 +1,24 @@
 # FastTime Play Instructions
 
-Using Fast time is really easy
+Using Fast time is relatively intuitive and easy.
 
-There are two main elements to fast time.
+There are two main elements to fast time: 
 
-Gym Timer and Fast Timer
+A Gym Timer and a Fasting Timer
 
 ## FastTime Gym Timer Instructions
-
-The way you use gym timer is select a Timer from the dropdown and select run.
-Select Stop if you'd like to pause the Gym Timer.
-and Select Start again to start the Gym Timer running again.
+1. Launch FastTime Application from device. 
+1. Select Gym Timer on bottom left navigation drawer if Gym Timer is not already selected. 
+1. Select your desired gym timerFrom the top center dropdown menu. 
+1. Press the start button. The Gym Timer will start operation, both round remaining time and total remaining time will be displayed. 
+1. When the current countdown timer is displaying work status; Perform exercise until countdown timer reaches zero.
+1. When the current countdown timer switches to rest status; take a rest from exercise until countdown timer reaches zero. 
+1. Repeat steps 5-6 until the time remaining reaches zero. 
 
 ## FastTime Fast Timer Instructions
-
-The Fast timer is basic in its operation.
-The Fist Main Component is a running timer button to select when you're ready to starting fasting for the day.
-When you are finished fasting for the day; simply press the stop button and your eating habits will be published to the database.
+2. Launch FastTime Application from device. 
+2. Select Fasting Timer on bottom center navigation drawer if Fasting Timer is not already selected.
+2. Press the Start button located on the bottom right corner, directly above the bottom navigation drawer. 
+2. Select the time you started your fast beginning with selecting month and day from the calendar and press OK.
+2. Select the hour, minute, and AM or PM for the time you started your last fast and press OK. The app is now recording your elapsed fast time.
+2. Press the stop button. The app has now recorded your total fasting time and the dates and hours in which you started and stopped your fast. 
